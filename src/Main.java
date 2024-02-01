@@ -43,20 +43,20 @@ public class Main {
 
     public static void adicionar() {
 
-        System.out.println("oque quer adicionar?: (1) Professores ou (2) Cursos"); // pergunta oque add
+        System.out.print("oque quer adicionar? (1) Professores ou (2) Cursos: "); // pergunta oque add
         Scanner scanner = new Scanner(System.in);
 
         String resposta = scanner.next();
 
         if (Objects.equals(resposta, "1")) {
 
-            System.out.print("adicione um professor:");
+            System.out.print("adicione um professor: ");
             String professor = scanner.next();
             professores.add(professor);
 
         } else if (Objects.equals(resposta, "2")) {
 
-            System.out.print("adicione um curso:");
+            System.out.print("adicione um curso: ");
             String curso = scanner.next();
             cursos.add(curso);
         }
@@ -64,7 +64,7 @@ public class Main {
 
     public static int pegarIndex() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("qual o index?");
+        System.out.print("qual o index?: ");
         index = scanner.nextInt(); //pega e index
         return index; // retorna
     }
@@ -72,7 +72,7 @@ public class Main {
     public static void remover(int index) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("deseja remover de qual lista (1)Professores/ (2)Cursos)");  // pergunta oque remover
+        System.out.print("deseja remover de qual lista (1)Professores/ (2)Cursos)");  // pergunta oque remover
 
         String resposta = scanner.next();
 
@@ -111,7 +111,7 @@ public class Main {
     }
     public  static void listar(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Quer exibir (1)cursos e professores ou (2)cursos concluidos?: ");
+        System.out.print("Quer exibir (1)cursos e professores ou (2)cursos concluidos?: ");
         String resposta2 = scanner.next();
 
         if (Objects.equals(resposta2, "1")){
