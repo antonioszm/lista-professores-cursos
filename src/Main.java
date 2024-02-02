@@ -26,8 +26,7 @@ public class Main {
                     listar(); // lista caso digite 2 e pergunta qual lista para listar
                     break;
                 case "3":
-                    pegarIndex(); //pega o index para ser usado em baixo
-                    remover(index); // remove o index
+                    removerdaLista();
                     break;
                 case "4":
                     pegarIndex(); //pega o index para ser usado em baixo novamente
@@ -63,25 +62,43 @@ public class Main {
     }
 
     public static int pegarIndex() {
+        listar();
         Scanner scanner = new Scanner(System.in);
         System.out.print("qual o index?: ");
         index = scanner.nextInt(); //pega e index
         return index; // retorna
     }
 
+
     public static void remover(int index) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("deseja remover de qual lista (1)Professores/ (2)Cursos)");  // pergunta oque remover
+        System.out.print("deseja remover de qual lista (1)Professores/ (2)Cursos / (3)CursosConcluidos: ");  // pergunta oque remover
 
-        String resposta = scanner.next();
+        int resposta = scanner.nextInt();
 
-        if (Objects.equals(resposta, "1")) {
-            professores.remove(index); //remove o index fornecido anteriormente
-        } else if (Objects.equals(resposta, "2")) {
-            cursos.remove(index);
+        switch (resposta){
+            case 1:
+                professores.remove(index); //remove o index fornecido anteriormente
+                System.out.println("Removido!");
+                break;
+            case 2:
+                cursos.remove(index);
+                System.out.println("Removido!");
+
+            case 3:
+                cursosConcluidos.remove(index);
+                System.out.println("Removido!");
+
         }
     }
+
+    public static void removerdaLista(){
+        pegarIndex();
+        remover(index);
+    }
+
+    // criar função removerdaLista
 
     public static void marcarConcluido(int index) {
         String curso = cursos.get(index);
