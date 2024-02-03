@@ -5,7 +5,7 @@ public class Professores {
     //Métodos:-> Ensinar
     public String nome;
 
-    public String idade;
+    public int idade;
 
     public String genero;
 
