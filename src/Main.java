@@ -16,7 +16,16 @@ public class Main {
         while (true) { // loop principal do programa
             Scanner scanner = new Scanner(System.in); //cria scanner
 
-            System.out.print("Digite: 1 para adicionar / 2 para listar/3 remover /4 marcar curso concluido/ 0 para sair : "); // perguntas menu inical
+            System.out.println("==================================================");
+            System.out.println("|                  Bem-vindo                     |");
+            System.out.println("|------------------------------------------------|");
+            System.out.println("|            1. Adicionar Curso                  |");
+            System.out.println("|            2. Listar Cursos                    |");
+            System.out.println("|            3. Remover Curso                    |");
+            System.out.println("|            4. Marcar Curso Concluído           |");
+            System.out.println("|            0. Sair                             |");
+            System.out.println("==================================================");
+            System.out.print("Escolha uma opção: "); // perguntas menu inical
             String resposta = scanner.next(); // pega resposta
             switch (resposta) {
                 case "1":
@@ -42,7 +51,13 @@ public class Main {
 
     public static void adicionar() {
 
-        System.out.print("oque quer adicionar? (1) Professores ou (2) Cursos: "); // pergunta oque add
+        System.out.println("=============================================");
+        System.out.println("|           O que deseja adicionar?         |");
+        System.out.println("|-------------------------------------------|");
+        System.out.println("|  (1) Adicionar Professores                |");
+        System.out.println("|  (2) Adicionar Cursos                     |");
+        System.out.println("=============================================");
+        System.out.print("Escolha uma opção: "); // pergunta oque add
         Scanner scanner = new Scanner(System.in);
 
         String resposta = scanner.next();
@@ -52,12 +67,14 @@ public class Main {
             System.out.print("adicione um professor: ");
             String professor = scanner.next();
             professores.add(professor);
+            System.out.println("Adicionado!");
 
         } else if (Objects.equals(resposta, "2")) {
 
             System.out.print("adicione um curso: ");
             String curso = scanner.next();
             cursos.add(curso);
+            System.out.println("Adicionado!");
         }
     }
 
@@ -73,7 +90,14 @@ public class Main {
     public static void remover(int index) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("deseja remover de qual lista (1)Professores/ (2)Cursos / (3)CursosConcluidos: ");  // pergunta oque remover
+        System.out.println("====================================================");
+        System.out.println("|       Deseja remover de qual lista?              |");
+        System.out.println("|--------------------------------------------------|");
+        System.out.println("|  (1) Professores                                 |");
+        System.out.println("|  (2) Cursos                                      |");
+        System.out.println("|  (3) Cursos Concluídos                           |");
+        System.out.println("====================================================");
+        System.out.print("Escolha uma opção: ");  // pergunta oque remover
 
         int resposta = scanner.nextInt();
 
@@ -85,10 +109,12 @@ public class Main {
             case 2:
                 cursos.remove(index);
                 System.out.println("Removido!");
+                break;
 
             case 3:
                 cursosConcluidos.remove(index);
                 System.out.println("Removido!");
+                break;
 
         }
     }
@@ -106,6 +132,8 @@ public class Main {
         cursos.remove(index);
 
         cursosConcluidos.add(curso);
+        System.out.println("Marcado como concluido!");
+
     }
 
     public static void sair() {
@@ -128,7 +156,13 @@ public class Main {
     }
     public  static void listar(){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Quer exibir (1)cursos e professores ou (2)cursos concluidos?: ");
+        System.out.println("===========================================");
+        System.out.println("|              Quer exibir:               |");
+        System.out.println("|-----------------------------------------|");
+        System.out.println("| (1) Cursos e Professores                |");
+        System.out.println("| (2) Cursos Concluídos                   |");
+        System.out.println("===========================================");
+        System.out.print("Escolha uma opção: ");
         String resposta2 = scanner.next();
 
         if (Objects.equals(resposta2, "1")){
